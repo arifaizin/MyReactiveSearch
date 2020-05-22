@@ -1,7 +1,4 @@
 <resources>
     <string name="app_name">My Reactive Search</string>
-    <string name="select_province">Pilih Provinsi</string>
-    <string name="select_city">Pilih Kota</string>
-    <string name="select_regency">Pilih Kecamatan</string>
-
+    <string name="your_place">Lokasi Kamu</string>
 </resources>
