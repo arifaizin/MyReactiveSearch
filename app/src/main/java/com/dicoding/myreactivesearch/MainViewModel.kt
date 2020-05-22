@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.*
 @ExperimentalCoroutinesApi
 class MainViewModel : ViewModel() {
 
-    private val apiKey = "pk.eyJ1IjoiYXJpZmFpemluIiwiYSI6ImNrYTI2c3R1cjAwNXAzbm1zaDYyZW1ra2cifQ.okSWF0zf58rWkhoVuYjShQ"
+    private val accessToken = "pk.eyJ1IjoiYXJpZmFpemluIiwiYSI6ImNrYTI2c3R1cjAwNXAzbm1zaDYyZW1ra2cifQ.okSWF0zf58rWkhoVuYjShQ"
     val queryChannel = BroadcastChannel<String>(Channel.CONFLATED)
 
     val searchResult = queryChannel.asFlow()
@@ -22,7 +22,7 @@ class MainViewModel : ViewModel() {
             }
             .distinctUntilChanged()
             .mapLatest {
-                ApiConfig.provideApiService().getCountry(it, apiKey).features
+                ApiConfig.provideApiService().getCountry(it, accessToken).features
             }
             .asLiveData()
 }
