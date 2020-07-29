@@ -20,7 +20,7 @@ class MainViewModel : ViewModel() {
         .debounce(300)
         .distinctUntilChanged()
         .filter {
-            it.trim().isEmpty().not()
+            it.trim().isNotEmpty()
         }
         .mapLatest {
             ApiConfig.provideApiService().getCountry(it, accessToken).features
